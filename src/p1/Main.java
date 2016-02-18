@@ -40,11 +40,13 @@ class Dog extends Pet {
 
     @Override
     public String toString() {
-        return "Dog{" +
+        String s1 = super.toString();
+        String s2 = "Dog{" +
                 "vocalize='" + vocalize + '\'' +
                 ", legs=" + legs +
                 ", houseTrained=" + houseTrained +
                 '}';
+        return s1 + "\n" + s2;
     }
 }
 
