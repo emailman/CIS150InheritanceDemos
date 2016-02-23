@@ -9,17 +9,31 @@ public class Main {
         dog1.weight = 20;
         dog1.age = 1;
 
-        Pet cat1 = new Cat();
+        Pet bird1 = new Bird();
+        bird1.name = "Tweety";
+        bird1.breed = "parrot";
+        bird1.weight = .25;
+        bird1.age = 10;
 
-        System.out.println(dog1);
+        if (bird1 instanceof Bird)
+            bird1.learnedToTalk(bird1);
+        else
+            System.out.println("Sorry, only birds can learn to talk");
+
+        System.out.println(dog1 + "\n\n" + bird1);
     }
 }
 
-class Pet {
+abstract class Pet {
     String name;
     String breed;
     double weight;
     int age;
+
+    void learnedToTalk(Pet arg) {
+        Bird bird = (Bird) arg;
+        bird.doesTalk = true;
+    }
 
     @Override
     public String toString() {
@@ -37,7 +51,6 @@ class Dog extends Pet {
     int legs = 4;
     Boolean houseTrained = false;
 
-
     @Override
     public String toString() {
         String s1 = super.toString();
@@ -50,9 +63,19 @@ class Dog extends Pet {
     }
 }
 
-class Cat extends Pet {
-    String vocalize = "meow";
-    int legs = 4;
-    Boolean houseTrained = false;
+class Bird extends Pet {
+    String vocalize = "tweet";
+    int legs = 2;
+    Boolean doesTalk = false;
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n" +
+                "Bird{" +
+                "vocalize='" + vocalize + '\'' +
+                ", legs=" + legs +
+                ", doesTalk=" + doesTalk +
+                "} ";
+    }
 }
 
