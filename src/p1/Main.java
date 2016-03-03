@@ -3,24 +3,24 @@ package p1;
 public class Main {
 
     public static void main(String[] args) {
-        Pet dog1 = new Dog();
-        dog1.name = "Rover";
-        dog1.breed = "boxer";
-        dog1.weight = 20;
-        dog1.age = 1;
+        Pet pet1 = new Dog();
+        pet1.name = "Rover";
+        pet1.breed = "boxer";
+        pet1.weight = 20;
+        pet1.age = 1;
 
-        Pet bird1 = new Bird();
-        bird1.name = "Tweety";
-        bird1.breed = "parrot";
-        bird1.weight = .25;
-        bird1.age = 10;
+        Pet pet2 = new Bird();
+        pet2.name = "Tweety";
+        pet2.breed = "parrot";
+        pet2.weight = .25;
+        pet2.age = 10;
 
-        if (bird1 instanceof Bird)
-            bird1.learnedToTalk(bird1);
+        if (pet2 instanceof Bird)
+            pet2.learnedToTalk(pet2);
         else
             System.out.println("Sorry, only birds can learn to talk");
 
-        System.out.println(dog1 + "\n\n" + bird1);
+        System.out.println(pet1 + "\n\n" + pet2);
     }
 }
 
